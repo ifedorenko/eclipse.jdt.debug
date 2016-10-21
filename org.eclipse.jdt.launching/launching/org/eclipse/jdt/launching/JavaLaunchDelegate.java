@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.jdt.internal.launching.LaunchingMessages;
+import org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedJavaLaunchDelegate;
 import org.eclipse.osgi.util.NLS;
 
 /**
@@ -26,6 +27,8 @@ import org.eclipse.osgi.util.NLS;
  * <p>
  * Clients may subclass and instantiate this class.
  * </p>
+ * 
+ * @see AdvancedJavaLaunchDelegate
  * @since 3.1
  */
 public class JavaLaunchDelegate extends AbstractJavaLaunchConfigurationDelegate {
