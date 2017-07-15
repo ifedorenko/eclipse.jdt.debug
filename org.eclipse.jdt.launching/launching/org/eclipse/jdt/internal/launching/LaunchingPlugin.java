@@ -69,7 +69,6 @@ import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupSupport;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry2;
 import org.eclipse.jdt.launching.IVMConnector;
 import org.eclipse.jdt.launching.IVMInstall;
@@ -510,8 +509,6 @@ public class LaunchingPlugin extends Plugin implements DebugOptionsListener, IEc
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		try {
-			AdvancedSourceLookupSupport.stop();
-
 			DebugPlugin.getDefault().getLaunchManager().removeLaunchListener(this);
 			DebugPlugin.getDefault().removeDebugEventListener(this);
 			ResourcesPlugin.getWorkspace().removeResourceChangeListener(this);
@@ -560,7 +557,6 @@ public class LaunchingPlugin extends Plugin implements DebugOptionsListener, IEc
 		DebugPlugin.getDefault().getLaunchManager().addLaunchListener(this);
 		DebugPlugin.getDefault().addDebugEventListener(this);
 
-		AdvancedSourceLookupSupport.start();
 	}
 	
 	/**
